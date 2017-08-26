@@ -1,6 +1,8 @@
 # Notes
 
-## 2017-07-22 Experimenting with QGIS.
+## 2017-07-22
+
+### Experimenting with QGIS.
 
 Here's an approach in QGIS that got me quite close to what I want. 
 
@@ -14,6 +16,22 @@ Here's an approach in QGIS that got me quite close to what I want.
 7. Explode the lines into their segments.
 8. Create a smaller buffer for the selected cities.
 9. For each line segment, check whether both ending nodes are inside one of the buffer polygons; if not remove the segment from the dataset. 
+
+## 2017-08-26
+
+### Data preparation
+
+I downloaded OpenStreetMap data from [Geofrabik's Data Extracts](http://download.geofabrik.de/index.html) for five federal states in Germany:
+
+- Mecklenburg-Vorpommern
+- Berlin/Brandenburg
+- Sachsen-Anhalt
+- Sachsen
+- Thüringen
+
+For each federal state, I extracted all roads  where `fclass=motorway` from `gis.osm_roads_free_1` and all places where `population>29999` from `gis.osm_places_free_1`. I then merged all five datasets for both roads and places into one dataset respectively and exported the result to GeoJSON. 
+
+
 
 
 ## Next
